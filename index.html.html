@@ -1,462 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Estratégica | Fernanda Stadler</title>
+    <title>EnergiaJusta Pitch | Investidores 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        .active-nav {
-            color: #ca8a04; /* yellow-600 */
-            transform: scale(1.1);
-        }
-        .pillar-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .pillar-content.active {
-            display: block;
-        }
-        .pillar-button.active {
-            background-color: #ca8a04; /* yellow-600 */
-            color: white;
-            box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
-        }
-        .gemini-button {
-            background-color: #f59e0b; /* amber-500 */
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-        }
-        .gemini-button:hover {
-            background-color: #d97706; /* amber-600 */
-        }
-        .gemini-result {
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: #f1f5f9; /* slate-100 */
-            border-radius: 0.375rem;
-            border: 1px solid #e2e8f0; /* slate-200 */
-            white-space: pre-wrap;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        .loading-spinner {
-            width: 1.25rem;
-            height: 1.25rem;
-            border: 2px solid transparent;
-            border-top-color: white;
-            border-right-color: white;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            margin-left: 0.5rem;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .accent-glow { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+        .slide-in { animation: slideIn 0.8s ease-out forwards; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="text-slate-700">
+<body class="gradient-bg text-slate-100 font-sans">
 
-    <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-2xl font-bold text-slate-800">Proposta Estratégica</h1>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#diagnostico" class="nav-link text-slate-600 hover:text-yellow-600 px-3 py-2 rounded-md text-sm font-medium transition-transform duration-200">Diagnóstico</a>
-                        <a href="#estrategia" class="nav-link text-slate-600 hover:text-yellow-600 px-3 py-2 rounded-md text-sm font-medium transition-transform duration-200">Estratégia</a>
-                        <a href="#plano" class="nav-link text-slate-600 hover:text-yellow-600 px-3 py-2 rounded-md text-sm font-medium transition-transform duration-200">Plano de Ação</a>
-                        <a href="#investimento" class="nav-link text-slate-600 hover:text-yellow-600 px-3 py-2 rounded-md text-sm font-medium transition-transform duration-200">Investimento</a>
-                        <a href="#contato" class="nav-link text-slate-600 hover:text-yellow-600 px-3 py-2 rounded-md text-sm font-medium transition-transform duration-200">Contato</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <header class="min-h-screen flex flex-col justify-center items-center text-center p-6 slide-in">
+        <div class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-4 uppercase tracking-widest">Portugal 2026</div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Energia<span class="text-green-500">Justa</span></h1>
+        <p class="text-xl md:text-2xl text-slate-400 max-w-2xl">Não estamos apenas a comparar preços. Estamos a devolver o poder de compra às famílias portuguesas através de IA.</p>
+        <div class="mt-10 flex gap-4">
+            <button onclick="scrollToSection('problem')" class="bg-green-600 hover:bg-green-500 px-8 py-3 rounded-lg font-bold transition-all accent-glow">Ver o Problema</button>
+            <a href="https://energiajusta.lovable.app" target="_blank" class="border border-slate-600 hover:bg-slate-800 px-8 py-3 rounded-lg font-bold transition-all">Ver App Live</a>
+        </div>
     </header>
 
-    <main>
-        <section id="hero" class="bg-slate-100 py-20 sm:py-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">Impulsionando o Sucesso da Sua Clínica</h1>
-                <p class="mt-4 text-xl sm:text-2xl text-slate-600">Uma Proposta Estratégica para Fernanda Stadler</p>
-                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-500">Transformando expertise em resultados exponenciais através de uma parceria focada em crescimento.</p>
+    <section id="problem" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 italic text-green-400">"Porque é que a minha conta subiu 30€?"</h2>
+                <p class="text-lg text-slate-300 mb-6">Esta é a pergunta de 4 milhões de famílias em Portugal este mês. Com a atualização da ERSE em Janeiro de 2026, o mercado tornou-se uma selva de termos técnicos:</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3"><i class="fas fa-times-circle text-red-500 mt-1"></i> <span><b>Opacidade:</b> Tarifas indexadas que ninguém entende.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-times-circle text-red-500 mt-1"></i> <span><b>Inércia:</b> 60% dos portugueses pagam mais do que deviam por medo de mudar.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-times-circle text-red-500 mt-1"></i> <span><b>Fadiga:</b> Comparar faturas manualmente leva horas.</span></li>
+                </ul>
             </div>
-        </section>
+            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                <h3 class="text-center mb-4 font-bold">O Custo da Inércia (Média Anual)</h3>
+                <canvas id="lossChart"></canvas>
+            </div>
+        </div>
+    </section>
 
-        <section id="introducao" class="py-20 sm:py-24">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                 <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Olá, Fernanda! Uma Parceria para Elevar Seus Resultados.</h2>
-                <p class="mt-6 text-lg text-slate-600">Reconhecemos sua expertise e o valor imenso que seus infoprodutos e consultorias oferecem para a gestão e excelência em clínicas. Seu posicionamento focado em 'experiências memoráveis com alma, presença e cuidado' é um diferencial poderoso.</p>
-                <p class="mt-4 text-lg text-slate-600">O objetivo desta proposta é apresentar como podemos, juntos, ampliar seu alcance, otimizar seus processos de venda e multiplicar seus resultados, fortalecendo ainda mais sua marca como a principal referência do setor.</p>
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12">A Nossa Magia: <span class="text-green-500">Simulação em 3 Segundos</span></h2>
+            <div class="bg-slate-800 p-10 rounded-3xl border-2 border-green-500/30 accent-glow">
+                <p class="mb-6 text-slate-400 uppercase tracking-tighter">Simulador de Projeção para Investidores</p>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block mb-2">Gasto Mensal (€)</label>
+                        <input type="range" id="billRange" min="40" max="300" value="100" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-green-500">
+                        <span id="billVal" class="text-2xl font-bold text-green-400">100€</span>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-xl">
+                        <p class="text-sm text-slate-500">Poupança EnergiaJusta (Média)</p>
+                        <p id="savingsVal" class="text-3xl font-extrabold text-white">240€ / ano</p>
+                    </div>
+                </div>
+                <p class="text-slate-400 italic font-light">"A nossa IA lê o PDF da fatura, identifica o CPE e cruza com os preços de hoje da OMIE e do mercado livre. Tudo automático."</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="diagnostico" class="py-20 sm:py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Diagnóstico Estratégico: Forças e Oportunidades</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Uma análise do cenário atual que revela uma base sólida e um vasto potencial de crescimento.</p>
+    <section class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center">Como vamos dominar o mercado</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-800 rounded-xl hover:border-green-500 border border-transparent transition-all">
+                    <i class="fas fa-search text-3xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">SEO de Autoridade</h3>
+                    <p class="text-slate-400">Capturamos as 25.000 buscas mensais por "Simulador ERSE" com uma ferramenta 10x mais rápida.</p>
                 </div>
-                <div class="mt-16 grid gap-10 md:grid-cols-2">
-                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-slate-800">Suas Forças</h3>
-                        <ul class="mt-6 space-y-4 text-slate-600 text-lg">
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10004;</span><span><strong>Nicho Específico e Valioso:</strong> Foco em gestão de clínicas.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10004;</span><span><strong>Posicionamento Premium:</strong> Foco em excelência e experiência.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10004;</span><span><strong>Portfólio de Produtos Coeso:</strong> Soluções relevantes e diversificadas.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10004;</span><span><strong>Expertise e Autoridade:</strong> Conhecimento profundo e comprovado.</span></li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-slate-800">Oportunidades de Crescimento</h3>
-                         <ul class="mt-6 space-y-4 text-slate-600 text-lg">
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10148;</span><span><strong>Ampliar Visibilidade:</strong> Alcançar um público maior e qualificado.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10148;</span><span><strong>Automatizar Funis de Venda:</strong> Criar previsibilidade e escala.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10148;</span><span><strong>Otimizar a Conversão:</strong> Transformar mais interessados em clientes.</span></li>
-                            <li class="flex items-start"><span class="text-yellow-600 mr-3 mt-1">&#10148;</span><span><strong>Potencializar Engajamento:</strong> Construir uma comunidade fiel e engajada.</span></li>
-                        </ul>
-                    </div>
+                <div class="p-8 bg-slate-800 rounded-xl hover:border-green-500 border border-transparent transition-all">
+                    <i class="fas fa-bolt text-3xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Foco no Indexado</h3>
+                    <p class="text-slate-400">Em 2026, o mercado indexado é a maior fonte de poupança. Somos os líderes em explicar este modelo.</p>
+                </div>
+                <div class="p-8 bg-slate-800 rounded-xl hover:border-green-500 border border-transparent transition-all">
+                    <i class="fas fa-handshake text-3xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Custo de Aquisição (CAC)</h3>
+                    <p class="text-slate-400">Através de parcerias com influenciadores de finanças, prevemos um CAC de apenas 1,20€ por utilizador.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="estrategia" class="py-20 sm:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">A Estratégia: Pilares para o Sucesso Contínuo</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Propomos uma abordagem integrada, sustentada por três pilares estratégicos, para construir um crescimento sólido e duradouro.</p>
-                </div>
-                <div class="mt-16">
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button class="pillar-button active w-full sm:w-auto text-lg font-semibold px-8 py-4 rounded-lg shadow-md transition-all duration-300 bg-white" data-pillar="pilar1">1. Presença Digital Magnética</button>
-                        <button class="pillar-button w-full sm:w-auto text-lg font-semibold px-8 py-4 rounded-lg shadow-md transition-all duration-300 bg-white" data-pillar="pilar2">2. Funis de Venda Inteligentes</button>
-                        <button class="pillar-button w-full sm:w-auto text-lg font-semibold px-8 py-4 rounded-lg shadow-md transition-all duration-300 bg-white" data-pillar="pilar3">3. Marca Forte e Relacionamento</button>
-                    </div>
-                    <div id="pillars-container" class="mt-12 bg-white p-8 sm:p-12 rounded-xl shadow-xl">
-                        <div id="pilar1" class="pillar-content active">
-                            <h3 class="text-2xl sm:text-3xl font-bold text-slate-800">Atraindo e Engajando Seu Público Ideal</h3>
-                            <p class="mt-4 text-slate-600 text-lg">O primeiro passo é garantir que sua mensagem chegue às pessoas certas da forma mais impactante possível, construindo uma base sólida de seguidores e leads qualificados.</p>
-                            <ul class="mt-8 grid gap-6 md:grid-cols-3 text-slate-600">
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Marketing de Conteúdo Estratégico</h4>
-                                    <p class="mt-2">Criação de conteúdo relevante (Reels, Carrosséis, Stories) que educa, engaja e posiciona sua marca.</p>
-                                    <button id="generatePostIdeas" class="gemini-button mt-4">✨ Gerar Ideias de Posts</button>
-                                    <div id="postIdeasResult" class="gemini-result" style="display: none;"></div>
-                                </li>
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Tráfego Pago Inteligente</h4>
-                                    <p class="mt-2">Campanhas segmentadas no Meta e Google Ads para alcançar gestores de clínicas e capturar leads de forma eficiente.</p>
-                                </li>
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Iscas Digitais de Alto Valor</h4>
-                                    <p class="mt-2">Desenvolvimento de e-books e checklists para transformar visitantes em leads engajados.</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="pilar2" class="pillar-content">
-                             <h3 class="text-2xl sm:text-3xl font-bold text-slate-800">Convertendo Interesse em Clientes</h3>
-                             <p class="mt-4 text-slate-600 text-lg">Com a atenção do público, o próximo passo é guiá-lo por uma jornada de conversão otimizada, transformando interesse em vendas de forma consistente e automatizada.</p>
-                            <ul class="mt-8 grid gap-6 md:grid-cols-3 text-slate-600">
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">E-mail Marketing que Conecta</h4>
-                                    <p class="mt-2">Sequências automatizadas para nutrição de leads, ofertas e recuperação de vendas, construindo um relacionamento direto.</p>
-                                    <button id="generateWelcomeEmail" class="gemini-button mt-4">✨ Esboçar E-mail de Boas-vindas</button>
-                                    <div id="welcomeEmailResult" class="gemini-result" style="display: none;"></div>
-                                </li>
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Otimização de Conversão (CRO)</h4>
-                                    <p class="mt-2">Análise e melhoria contínua das páginas de venda para maximizar os resultados de cada visita.</p>
-                                </li>
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Funis Perpétuos e Lançamentos</h4>
-                                    <p class="mt-2">Estruturação de sistemas para vendas diárias e planejamento de picos de receita com campanhas estratégicas.</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="pilar3" class="pillar-content">
-                             <h3 class="text-2xl sm:text-3xl font-bold text-slate-800">Construindo Lealdade e Autoridade</h3>
-                            <p class="mt-4 text-slate-600 text-lg">O verdadeiro crescimento vem da construção de uma marca forte e de um relacionamento duradouro com os clientes, transformando-os em fãs e promotores do seu trabalho.</p>
-                            <ul class="mt-8 grid gap-6 md:grid-cols-2 text-slate-600">
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Fortalecimento da Marca</h4>
-                                    <p class="mt-2">Posicionamento consistente em todos os canais para aumentar a percepção de valor e consolidar sua autoridade.</p>
-                                </li>
-                                <li class="bg-slate-50 p-6 rounded-lg">
-                                    <h4 class="font-semibold text-slate-700 text-xl">Gestão de Prova Social</h4>
-                                    <p class="mt-2">Coleta e utilização estratégica de depoimentos para aumentar a confiança e validar a qualidade dos seus produtos.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <section class="py-20 px-6 text-center">
+        <h2 class="text-5xl font-bold mb-8">Prontos para escalar?</h2>
+        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">O EnergiaJusta está em fase de lançamento beta com tração orgânica. Procuramos parceiros para acelerar o marketing e integração direta com comercializadores.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+            <div class="p-6 bg-green-900/20 rounded-lg border border-green-500/50">
+                <p class="text-sm">Target Q1 2026</p>
+                <p class="text-2xl font-bold">50k Utilizadores</p>
             </div>
-        </section>
-
-        <section id="plano" class="py-20 sm:py-24 bg-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Nosso Compromisso em Ação: Roadmap Inicial</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Um plano claro para os primeiros 90 dias, focado em construir as bases e gerar os primeiros resultados.</p>
-                </div>
-                <div class="mt-16 grid gap-8 md:grid-cols-3">
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="text-yellow-600 text-5xl font-bold">1</div>
-                        <h3 class="mt-4 text-xl font-bold text-slate-800">Mês 1: Setup Estratégico</h3>
-                        <p class="mt-2 text-slate-500">Imersão, planejamento, definição de KPIs, criação da 1ª isca digital e configuração de ferramentas.</p>
-                    </div>
-                     <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="text-yellow-600 text-5xl font-bold">2</div>
-                        <h3 class="mt-4 text-xl font-bold text-slate-800">Mês 2: Implementação</h3>
-                        <p class="mt-2 text-slate-500">Lançamento das campanhas de tráfego, execução de conteúdo e desenvolvimento de sequências de e-mail.</p>
-                    </div>
-                     <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="text-yellow-600 text-5xl font-bold">3</div>
-                        <h3 class="mt-4 text-xl font-bold text-slate-800">Mês 3: Otimização</h3>
-                        <p class="mt-2 text-slate-500">Análise de resultados, testes A/B em anúncios e páginas, e planejamento para os próximos passos.</p>
-                    </div>
-                </div>
+            <div class="p-6 bg-green-900/20 rounded-lg border border-green-500/50">
+                <p class="text-sm">Receita Estimada (Comissões)</p>
+                <p class="text-2xl font-bold">€150k / Ano 1</p>
             </div>
-        </section>
-        
-        <section id="kpis" class="py-20 sm:py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Medindo o Sucesso: O Que Vamos Acompanhar</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Nossa parceria será guiada por dados. Estes são os indicadores-chave que monitoraremos para garantir o progresso.</p>
-                </div>
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">📈</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Volume de Vendas</h4>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">🎯</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Leads Qualificados</h4>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">💰</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Taxa de Conversão</h4>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">🚀</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Engajamento</h4>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">📊</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Custo por Aquisição (CAC)</h4>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">♻️</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Retorno em Anúncios (ROAS)</h4>
-                    </div>
-                     <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">⭐</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Autoridade da Marca</h4>
-                    </div>
-                     <div class="bg-slate-50 p-6 rounded-lg shadow-md">
-                        <p class="text-4xl">💡</p>
-                        <h4 class="mt-4 font-semibold text-slate-700">Novas Oportunidades</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="investimento" class="py-20 sm:py-24 bg-slate-800 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold">Investimento Estratégico para Crescimento Sustentável</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-300">Acreditamos em transparência e em um modelo que reflita o valor entregue. Apresentamos duas opções para iniciarmos nossa parceria.</p>
-                </div>
-                <div class="mt-16 grid gap-10 md:grid-cols-2 max-w-4xl mx-auto">
-                    <div class="bg-slate-700 p-8 rounded-xl border border-slate-600 shadow-xl">
-                        <h3 class="text-2xl font-bold text-yellow-500">Gestão Essencial</h3>
-                        <p class="mt-4 text-slate-300">Ideal para construir as bases e focar na geração de tráfego e leads.</p>
-                        <div class="mt-6 text-4xl font-bold">R$ 800,00 <span class="text-lg font-normal text-slate-400">/mês</span></div>
-                        <ul class="mt-6 space-y-3 text-slate-300">
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Gestão de Tráfego (Meta & Google)</li>
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Funil de vendas e Business Plan</li>
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Configuração de Plataformas</li>
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Relatórios de Performance</li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-700 p-8 rounded-xl border-2 border-yellow-500 shadow-2xl relative sm:scale-105">
-                         <span class="absolute -top-3 right-1/2 translate-x-1/2 sm:right-0 sm:-mt-3 sm:mr-3 sm:translate-x-0 px-3 py-1 bg-yellow-500 text-white text-sm font-bold rounded-full">Recomendado</span>
-                        <h3 class="text-2xl font-bold text-yellow-500">Gestão Completa</h3>
-                        <p class="mt-4 text-slate-300">A solução integral para acelerar o crescimento, otimizando todos os pilares.</p>
-                        <div class="mt-6 text-4xl font-bold">R$ 1.350,00 <span class="text-lg font-normal text-slate-400">/mês</span></div>
-                        <ul class="mt-6 space-y-3 text-slate-300">
-                             <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span><strong>Tudo da Gestão Essencial +</strong></li>
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>E-mail Marketing e Automações</li>
-                            <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Otimização de Conversão (CRO)</li>
-                             <li class="flex items-center"><span class="text-yellow-500 mr-3">&#10004;</span>Acompanhamento Estratégico</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="mt-12 text-center text-slate-400">
-                    <p><strong>Taxa de Setup Inicial e Planejamento (Primeiro Mês):</strong> R$ 800,00.</p>
-                    <p><strong>Orçamento para Tráfego Pago (investido diretamente nas plataformas):</strong> Recomendação inicial de R$ 1.000,00 mensais.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contato" class="py-20 sm:py-24">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-800">Prontos para Começar a Transformação?</h2>
-                <p class="mt-4 text-lg text-slate-600">Agradecemos a oportunidade e estamos entusiasmados com o potencial desta parceria. Vamos conversar sobre os próximos passos?</p>
-                <div class="mt-10">
-                    <a href="mailto:seuemail@example.com" class="inline-block bg-yellow-600 text-white text-lg font-bold px-10 py-4 rounded-lg shadow-lg hover:bg-yellow-700 transition-colors duration-300">Agendar uma Conversa</a>
-                </div>
-                <div class="mt-12 border-t border-slate-200 pt-8">
-                     <h3 class="text-xl font-bold text-slate-700">Diego William | FastGrowth </h3>
-                     <p class="mt-2 text-slate-500">Enfermeiro Especialista em Marketing Digital para Experts e Clínicas </p>
-                     <p class="mt-4 text-slate-500">48 99134-1092 &bull; diegowwsantoa@gmail.com </p>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+        <button class="mt-12 bg-white text-black px-12 py-4 rounded-full font-black text-lg hover:bg-green-500 hover:text-white transition-all">REUNIR COM A EQUIPA</button>
+    </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const pillarButtons = document.querySelectorAll('.pillar-button');
-            const pillarContents = document.querySelectorAll('.pillar-content');
+        // Smooth Scroll
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
 
-            pillarButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const pillarId = this.dataset.pillar;
-
-                    pillarButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    pillarContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === pillarId) {
-                            content.classList.add('active');
-                        }
-                    });
-                });
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('main > section');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.4 
-            };
-
-            const sectionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active-nav');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active-nav');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                if (section.id) { // Only observe sections with an ID (relevant for nav)
-                    sectionObserver.observe(section);
-                }
-            });
-
-            // Gemini API Integration
-            const geminiApiKey = ""; // API Key will be injected by the Canvas environment
-            const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
-
-            const generatePostIdeasButton = document.getElementById('generatePostIdeas');
-            const postIdeasResultDiv = document.getElementById('postIdeasResult');
-            
-            const generateWelcomeEmailButton = document.getElementById('generateWelcomeEmail');
-            const welcomeEmailResultDiv = document.getElementById('welcomeEmailResult');
-
-            async function callGeminiAPI(prompt, buttonElement, resultDiv) {
-                const originalButtonText = buttonElement.innerHTML;
-                buttonElement.innerHTML = 'Gerando... <div class="loading-spinner"></div>';
-                buttonElement.disabled = true;
-                resultDiv.style.display = 'none';
-                resultDiv.textContent = '';
-
-                try {
-                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                    const payload = { contents: chatHistory };
-                    
-                    const response = await fetch(geminiApiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`API Error: ${response.status} ${response.statusText} - ${errorData.error?.message || 'Unknown error'}`);
-                    }
-
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        resultDiv.textContent = text;
-                        resultDiv.style.display = 'block';
-                    } else {
-                        resultDiv.textContent = 'Não foi possível gerar o conteúdo. A resposta da API estava vazia ou em formato inesperado.';
-                        resultDiv.style.display = 'block';
-                    }
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    resultDiv.textContent = `Erro ao gerar conteúdo: ${error.message}. Por favor, tente novamente.`;
-                    resultDiv.style.display = 'block';
-                } finally {
-                    buttonElement.innerHTML = originalButtonText;
-                    buttonElement.disabled = false;
-                }
+        // Gráfico de Perda
+        const ctx = document.getElementById('lossChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['EnergiaJusta', 'Mercado Livre (Média)', 'Mercado Regulado'],
+                datasets: [{
+                    label: 'Custo Anual (€)',
+                    data: [840, 1100, 1250],
+                    backgroundColor: ['#22c55e', '#475569', '#ef4444'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, grid: { color: '#334155' } } }
             }
+        });
 
-            if (generatePostIdeasButton) {
-                generatePostIdeasButton.addEventListener('click', function() {
-                    const prompt = "Gere 3 ideias de posts para redes sociais para clínicas que querem melhorar a experiência do paciente e a gestão. Para cada ideia, sugira um título chamativo, um breve resumo do conteúdo (2-3 frases) e um formato ideal (ex: Reel, Carrossel, Story Interativo). Foque em temas como 'atendimento humanizado', 'eficiência na gestão', 'diferenciação no mercado de saúde'.";
-                    callGeminiAPI(prompt, generatePostIdeasButton, postIdeasResultDiv);
-                });
-            }
+        // Calculadora Interativa
+        const range = document.getElementById('billRange');
+        const billVal = document.getElementById('billVal');
+        const savingsVal = document.getElementById('savingsVal');
 
-            if (generateWelcomeEmailButton) {
-                generateWelcomeEmailButton.addEventListener('click', function() {
-                    const prompt = "Escreva um esboço de e-mail de boas-vindas para novos leads que se inscreveram para receber mais informações sobre como melhorar a gestão e a experiência do paciente em suas clínicas. O e-mail deve ser caloroso, apresentar brevemente a expertise de Fernanda Stadler em transformar clínicas, e sugerir um próximo passo (ex: visitar uma página específica, agendar uma conversa rápida). Assine como 'Equipe Fernanda Stadler'.";
-                    callGeminiAPI(prompt, generateWelcomeEmailButton, welcomeEmailResultDiv);
-                });
-            }
-
+        range.addEventListener('input', (e) => {
+            const val = e.target.value;
+            billVal.innerText = val + '€';
+            const annualSavings = (val * 0.20) * 12; // Estimativa de 20% de poupança
+            savingsVal.innerText = annualSavings.toFixed(0) + '€ / ano';
         });
     </script>
-
 </body>
 </html>
